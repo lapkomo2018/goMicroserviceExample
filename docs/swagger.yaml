@@ -1,0 +1,84 @@
+basePath: /api/v1
+definitions:
+  echo.HTTPError:
+    properties:
+      message: {}
+    type: object
+  internal_transport_rest_v1.structAddReq:
+    properties:
+      message:
+        type: string
+    type: object
+  internal_transport_rest_v1.structAddResp:
+    properties:
+      id:
+        type: integer
+    type: object
+  internal_transport_rest_v1.structInfoResp:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: integer
+      message:
+        type: string
+      updated_at:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Example description
+  title: Example Service
+  version: "1.0"
+paths:
+  /add:
+    post:
+      consumes:
+      - application/json
+      description: add struct with msg
+      parameters:
+      - description: struct obj
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/internal_transport_rest_v1.structAddReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_transport_rest_v1.structAddResp'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      summary: Add Struct
+      tags:
+      - Struct
+  /info/{id}:
+    get:
+      description: Get struct info
+      parameters:
+      - description: ID of the struct
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/internal_transport_rest_v1.structInfoResp'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/echo.HTTPError'
+      summary: Info
+      tags:
+      - Struct
+swagger: "2.0"

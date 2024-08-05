@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "github.com/lapkomo2018/goServiceExample/pkg/grpc/example";
+
+service Example {
+  rpc DoSome(DoSomeRequest) returns (DoSomeResponse);
+}
+
+message DoSomeRequest {
+  string message = 1;
+}
+
+message DoSomeResponse {
+  string message = 1;
+}
