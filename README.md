@@ -1,4 +1,4 @@
-# Go Microservice Boilerplate
+# Go Microservice Example
 
 This project provides a boilerplate for a Go microservice with gRPC and Docker Compose. It includes a basic setup to run a Go server with Rest, gRPC and a MySQL database using Docker Compose.
 
