@@ -221,7 +221,7 @@ swag init --parseDependency --parseInternal -g cmd/app/main.go
 ## Troubleshooting
 
 - **Build context errors**: Ensure that all files in your project have correct permissions and are not being ignored by `.dockerignore`.
-- **Connection issues**: Verify that the configuration for the database connection in `config.yaml` is correct.
+- **Connection issues**: Verify that the configuration for the database connection in `.env` is correct.
 
 ## License
 
