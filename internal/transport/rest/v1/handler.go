@@ -2,15 +2,15 @@ package v1
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/lapkomo2018/goServiceExample/internal/core"
+	"github.com/lapkomo2018/goServiceExample/pkg/model"
 	"log"
 )
 
 type (
 	StructService interface {
 		ChangeMessage(id uint, message string) error
-		Add(str *core.Struct) error
-		FindByID(id uint) (*core.Struct, error)
+		Add(str *model.Struct) error
+		FindByID(id uint) (*model.Struct, error)
 	}
 
 	Validator interface {

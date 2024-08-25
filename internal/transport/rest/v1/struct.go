@@ -3,7 +3,7 @@ package v1
 import (
 	"errors"
 	"github.com/labstack/echo/v4"
-	"github.com/lapkomo2018/goServiceExample/internal/core"
+	"github.com/lapkomo2018/goServiceExample/pkg/model"
 	"net/http"
 	"strconv"
 	"time"
@@ -33,7 +33,7 @@ func (h *Handler) structAdd(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 	}
 
-	str := &core.Struct{
+	str := &model.Struct{
 		Message: body.Message,
 	}
 

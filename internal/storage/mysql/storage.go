@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"github.com/lapkomo2018/goServiceExample/internal/core"
+	"github.com/lapkomo2018/goServiceExample/pkg/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -23,7 +23,7 @@ func New(dsn string) (*Storage, error) {
 	log.Println("Connected mysql")
 
 	log.Println("Starting AutoMigrating...")
-	if err := db.AutoMigrate(&core.Struct{}); err != nil {
+	if err := db.AutoMigrate(&model.Struct{}); err != nil {
 		return nil, err
 	}
 	log.Println("AutoMigrating completed")
